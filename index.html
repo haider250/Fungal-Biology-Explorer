@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fungal Biology Explorer - Learn about fungi through interactive content, quizzes, and real-world applications.">
+    <title>Fungal Biology Explorer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav {
+            background-color: #388E3C;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/Mushrooms_in_forest.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: auto;
+        }
+        .cta-buttons {
+            margin-top: 2rem;
+        }
+        .cta-buttons a {
+            background-color: #FF9800;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            margin: 0.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .cta-buttons a:hover {
+            background-color: #F57C00;
+        }
+        section {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .topic-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .topic-card h3 {
+            margin-top: 0;
+            color: #2E7D32;
+        }
+        footer {
+            background-color: #2E7D32;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        /* Quiz Styles */
+        .quiz-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .quiz-question {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .quiz-options label {
+            display: block;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+        .quiz-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.7rem 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .quiz-btn:hover {
+            background-color: #388E3C;
+        }
+        .quiz-result {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Fungal Biology Explorer</h1>
+        <p>Discover the hidden kingdom of fungi</p>
+    </header>
+
+    <nav>
+        <a href="#topics">Explore</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#resources">Resources</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="hero">
+        <h2>Uncover the Science of Fungi</h2>
+        <p>From forest floors to medical labs, fungi shape our world in ways you never imagined.</p>
+        <div class="cta-buttons">
+            <a href="#topics">Start Exploring</a>
+            <a href="#quiz">Take a Quiz</a>
+            <a href="#resources">View Resources</a>
+        </div>
+    </div>
+
+    <section id="topics">
+        <h2>Core Topics</h2>
+        <div class="topics">
+            <div class="topic-card">
+                <h3>🍄 Classification</h3>
+                <p>Learn about Ascomycota, Basidiomycota, and other fungal groups.</p>
+            </div>
+            <div class="topic-card">
+                <h3>🌱 Ecology</h3>
+                <p>Explore fungi’s role in ecosystems, from decomposition to symbiosis.</p>
+            </div>
+            <div class="topic-card">
+                <h3>🧬 Anatomy</h3>
+                <p>Understand hyphae, mycelium, spores, and fruiting bodies.</p>
+            </div>
+            <div class="topic-card">
+                <h3>🧪 Human Uses</h3>
+                <p>Discover fungi in medicine, food, and biotechnology.</p>
+            </div>
+            <div class="topic-card">
+                <h3>🧫 Lab Techniques</h3>
+                <p>Learn culturing, microscopy, and DNA barcoding methods.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz">
+        <h2>Test Your Fungal Knowledge</h2>
+        <div class="quiz-container">
+            <div id="quiz-content"></div>
+            <button class="quiz-btn" onclick="submitQuiz()">Submit Answers</button>
+            <div id="quiz-result" class="quiz-result"></div>
+        </div>
+    </section>
+
+    <section id="resources">
+        <h2>Resources</h2>
+        <ul>
+            <li><a href="https://www.freebookcentre.net/Biology/Mycology-Books.html" target="_blank">Free Mycology Books</a></li>
+            <li><a href="https://www.gutenberg.org/ebooks/bookshelf/129" target="_blank">Project Gutenberg Mycology Collection</a></li>
+            <li><a href="https://openlibrary.org/" target="_blank">Open Library</a></li>
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>About This Project</h2>
+        <p>This app is designed to make fungal biology accessible and engaging for learners of all levels. Built with open-access resources and interactive tools, it’s perfect for students, educators, and curious minds.</p>
+    </section>
+
+    <footer>
+        <p>© 2025 Fungal Biology Explorer | Built for science education</p>
+    </footer>
+
+    <script>
+        const quizData = [
+            {
+                question: "Which structure is the main body of a fungus?",
+                options: ["Hyphae", "Mycelium", "Spore", "Cap"],
+                answer: "Mycelium"
+            },
+            {
+                question: "Which fungal group includes mushrooms?",
+                options: ["Ascomycota", "Basidiomycota", "Zygomycota", "Chytridiomycota"],
+                answer: "Basidiomycota"
+            },
+            {
+                question: "What is the symbiotic relationship between fungi and plant roots called?",
+                options: ["Lichenization", "Mycorrhiza", "Parasitism", "Saprophytism"],
+                answer: "Mycorrhiza"
+            }
+        ];
+
+        function loadQuiz() {
+            const quizContainer = document.getElementById('quiz-content');
+            quizData.forEach((q, index) => {
+                let optionsHTML = '';
+                q.options.forEach(opt => {
+                    optionsHTML += `
+                        <label>
+                            <input type="radio" name="q${index}" value="${opt}"> ${opt}
+                        </label>
+                    `;
+                });
+                quizContainer.innerHTML += `
+                    <div class="quiz-question">${index + 1}. ${q.question}</div>
+                    <div class="quiz-options">${optionsHTML}</div>
+                    <hr>
+                `;
+            });
+        }
+
+        function submit
